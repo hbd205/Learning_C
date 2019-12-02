@@ -3,32 +3,32 @@
 
 int main(void)
 {
-    int i;
+    int i=0;
     int is_upper, is_lower, is_digit;
     char password[30];
 
     while(1)
     {
-        printf("¾ÏÈ£¸¦ »ı¼ºÇÏ½Ã¿À:");
+        printf("ì•”í˜¸ë¥¼ ìƒì„±í•˜ì‹œì˜¤:");
         gets(password);
 
         is_upper=is_lower=is_digit=0;
-        for(i=0; i<strlen(password); i++)
-        {
-            if(password[i]>='0' && password[i]<='9')
+        while(i<strlen(password)
+          {
+              if(password[i]>='0' && password[i]<='9')
                 is_digit = 1;
-            else if(password[i]>='A' && password[i]<='Z')
-                is_upper = 1;
-            else if(password[i]>='a' && password[i]<='z')
-                is_lower = 1;
-        }
-
+                else if(password[i]>='A' && password[i]<='Z')
+                    is_upper = 1;
+                else if(password[i]>='a' && password[i]<='z')
+                    is_lower = 1;
+                i++;
+          }
         if(is_lower*is_upper*is_digit != 0)
         {
-            printf("ÀûÁ¤ÇÑ ¾ÏÈ£ÀÔ´Ï´Ù.\n");
+            printf("ì ì •í•œ ì•”í˜¸ì…ë‹ˆë‹¤.\n");
             break;
         }
-        else("¼ıÀÚ, ¼Ò¹®ÀÚ, ´ë¹®ÀÚ¸¦ ¼¯¾î¼­ ¾ÏÈ£¸¦ ´Ù½Ã ¸¸µå¼¼¿ä.\n");
+        else("ìˆ«ì, ì†Œë¬¸ì, ëŒ€ë¬¸ìë¥¼ ì„ì–´ì„œ ì•”í˜¸ë¥¼ ë‹¤ì‹œ ë§Œë“œì„¸ìš”.\n");
     }
     
     return 0;
